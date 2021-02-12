@@ -1,10 +1,14 @@
 import pyperclip
+from pynput import keyboard
+import socket
 
+def main():             
+    hotKeyCopy = '<cmd>+c'
+    hotKeyPaste = '<cmd>+v'  
+    if(platform.system() == 'Windows'):
+        hotKeyCopy = '<ctrl>+c'
+        hotKeyPaste = '<ctrl>+v'
 
-def main():
-    from pynput import keyboard
-    import socket             
-   
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)       
     print ("Socket successfully created") 
       
